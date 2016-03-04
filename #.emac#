@@ -1,0 +1,37 @@
+
+:(menu-bar-mode -1) ;; ’ÉÔ‘ÏÔ’¼¨’ºÚ‘µ¥
+(tool-bar-mode -1) ;; ’ÉÔ‘ÏÔ’¼¨’¹©’¶ñ‘À¸
+(scroll-bar-mode -1) ;; ’ÉÔ‘ÏÔ’¼¨‘¹ö‘¶¯’¾ò
+(column-number-mode 1) ;; ‘ÏÔ’¼¨’¹Ô’¿ô’ÏÂ’Îó’¿ô
+;;(setq default-directory "d:/home/") ;; ‘Éè’ÃÖ’àÔ‘ÈÏ’ÌÜ‘Â¼
+(appt-activate 1) ;; ”´ë‘¶¯’Æü‘Àú’Äó’ÀÃ
+(setq require-final-newline t) ;; ‘±à‘¼­’Ê¸’·ï’Åª’ºÇ’¹¡’°ì’Ğ¤’»ú’Éä’À§’²ó‘³µ
+(setq bookmark-default-file "~/.emacs.d/.emacs.bmk") ;; ‘Êé‘Ç©’Ê¸’·ï’°Ì’ÃÖ
+(global-set-key "\r" 'newline-and-indent) ;; ’²ó‘³µ’àÔ‘ÈÏ‘Ëõ‘½ø
+(setq inhibit-startup-message t) ;; ’ÉÔ‘ÏÔ’¼¨”´ë‘¶¯‘Ê±’Åª’³¦’ÌÌ
+(show-paren-mode 1) ;; ‘ÏÔ’¼¨’³ç’¹æ’Åª‘¶Ô‘Ó¦’È¿’³ç’¹æ
+(setq show-paren-style 'mixed) ;; ‘Éè’ÃÖ‘ÏÔ’¼¨’³ç’¹æ’Åª‘Ñù’¼°
+(mouse-avoidance-mode 'animate) ;; ’¸÷‘±ê’Í¿’ÁÍ‘±ê’½Å’¹ç‘Ê±’¡¤’°Ü‘¿ª’ÁÍ‘±ê
+(setq default-tab-width 4) ;; Tab ’Åª‘¿í’ÅÙ‘Îª 4
+(global-set-key (kbd "C-SPC") 'nil) 
+(custom-set-variables 
+'(load-home-init-file t t)) 
+(custom-set-faces) 
+(setq default-major-mode 'text-mode);’°ì’ÂÇ‘¿ª’½¢’µ¯’ÍÑ text ’ÌÏ’¼°’¡£ 
+(global-font-lock-mode t);‘Óï’Ë¡’¹â’Î¼ 
+(auto-image-file-mode t);’ÂÇ‘¿ª‘Í¼’ÊÒ‘ÏÔ’¼¨’¸ù’Ç½ 
+(fset 'yes-or-no-p 'y-or-n-p);’°Ê y/n’Âå’É½ yes/no’¡¤’²Ä’Ç½”°ß‘¾õ’ÆÀ’ÉÔ’¼û’Í×’¡¤’Òê’Òê’¡£ 
+(column-number-mode t);‘ÏÔ’¼¨’Îó’¹æ 
+(show-paren-mode t);‘ÏÔ’¼¨’³ç’¹æ’É¤’ÇÛ 
+(display-time-mode 1);‘ÏÔ’¼¨‘Ê±‘¼ä’¡¤’³Ê’¼°’Ç¡’²¼ 
+(setq display-time-24hr-format t) 
+(setq display-time-day-and-date t) 
+(tool-bar-mode 0);’µî’ÙÜ’Æá’Ğ¤’Âç’Âç’Åª’¹©’¶ñ‘À¸
+(menu-bar-mode 0) 
+(scroll-bar-mode 0);’µî’ÙÜ‘¹ö‘¶¯’¾ò’¡¤’°ø‘Îª’²Ä’°Ê’»È’ÍÑ’ÁÍ‘±ê‘¹ö‘ÂÖ’Î» ^_^ 
+(mouse-avoidance-mode 'animate);’¸÷‘±ê’ğÑ’¶á’ÁÍ‘±ê’»Ø‘Õë‘Ê±’¡¤‘ÈÃ’ÁÍ‘±ê’»Ø‘Õë’¼«‘¶¯‘ÈÃ‘¿ª 
+(transient-mark-mode t); 
+(setq x-select-enable-clipboard t);’»Ù’»ıemacs’ÏÂ’³°’Éô’Äø’½ø’Åª’Ç´‘Ìù 
+(setq frame-title-format "PB@%b");’ºß‘±ê‘Ìâ‘À¸’Äó’¼¨”°ß’ÌÜ’Á°’ºß’½º˜¦¾’°Ì’ÃÖ 
+(setq default-fill-column 80);’àÔ‘ÈÏ‘ÏÔ’¼¨ 80’Îó’½¢‘»»’¹Ô 
+(setq-default make-backup-files nil);’ÉÔ’Í×’À¸’À®‘ÁÙ‘Ê±’Ê¸’·ï

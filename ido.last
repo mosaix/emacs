@@ -1,0 +1,41 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/" . "pb/")
+ ("/Users/pb/" . "Downloads/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/pb/.emacs.d/"
+ "/Users/pb/Downloads/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ ".emac"
+ "abc.py"
+ "b.py"
+ "#a.py#"
+ "a.py"
+ "##test.py##"
+ "#test.py#"
+ "test.py"
+ "test.test"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/pb/.emacs.d/" (22233 23339 0 0) "pb-theme.el" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".git/" ".emac~" ".emac" ".DS_Store" "../" "./")
+
+ ("/Users/pb/Downloads/" (22233 22401 0 0) "陆祎骏WEB简历.zip" "通用型门禁设置方法.docx" "通用型门禁设置方法 (1).docx" "美错 Biutiful.2010.BluRay.720p.x264.AC3-WOFEI.mkv" "简历编号15956753-缪路增-技术合伙人、CTO-猎聘网简历.doc" "社区O2O心动力-妙兜.pptx" "短信服务商.zip" "短信服务商/" "物业软件导出的表格.xls" "物业软件导出的表格.csv" "物业软件导出的表.csv" "物业平台对接需求.doc" "物业平台对接需求(1).doc" "清雅.mssf" "无垠的太空.The.Expanse.S01E10.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E09.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E08.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E07.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E06.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E05.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E04.中英字幕.HDTVrip.1024X576.mp4" "无垠的太空.The.Expanse.S01E03.中英字幕.HDTVrip.1024X576.mp4" "新建文本文档.txt" "心迷宫.Deep.in.the.Heart.2015.HD1080P.X264.AAC.Mandarin.CHS-ENG.Mp4Ba.mp4" "张瑞敏+应聘前端.docx" "宇松快递柜介绍.ppt" "妙兜手机开门方案介绍.docx" "妙兜产品安装说明.pdf" "商友说明.rar" "傻瓜の乌鸦.mssf" "个人简历2015.pdf" "【lol电影天堂www.loldytt.com】万万没想到.HD1280超清国语中英双字.mp4" "【BT天堂】【BTtiantang.com】[720p]美错.2.73GB.torrent" "【BT天堂】【BTtiantang.com】[720p]法国中尉的女人.4.37GB.torrent" "【BT天堂】【BTtiantang.com】[720p]护送钱斯.1.86GB.torrent" "【BT天堂】【BTtiantang.com】[720p]德州巴黎.4GB.torrent" "【BT天堂】【BTtiantang.com】[1080p]如晴天，似雨天.3.48GB.torrent" "【BT天堂】【BTtiantang.com】[1080p]危险关系.1.81GB.torrent" "~$droid客户端获取用户数据.docx" "wuye.csv" "wuye(1).csv" "wu.csv" "WS_MOBILE_PAY_SDK_BASE.zip" "WS_MOBILE_PAY_SDK_BASE/" "user_estate_rate.proto" "uclbrt-api-qrcode-java-v2.0.rar" "uclbrt-api-qrcode-java-v2.0/" "time.docx" "thunder_dl2.6.7.1706_Beta.dmg" "The.Martian.2015.1080p.WEB-DL.DD5.1.H264-RARBG.mkv" "The.Martian.2015.1080p.WEB-DL.DD5.1.H264-RARBG.ass" "the.french.lieutenants.woman.1981.720p.bluray.dts.x264-publichd.mkv" "The.Attorney.2013.辩护人.韩语中字.HR-HDTV.1024X576.x264-YYeTs_韩剧精灵.mkv" "test-1.txt" "test-1.csv" "Taking Chance - 720p HDRIP AC3 5.1 - sum1_here SilverRG.mkv" "Taking Chance - 720p HDRIP AC3 5.1 - sum1_here SilverRG.ass" "Sublime Text Build 3083.dmg" "sqlitestudio-3.0.7.dmg" "sqlitestudio-3.0.7 (1).dmg" "sqlitebrowser-3.8.0v5.dmg" "Spectre.2015.1080p.BluRay.H264.AAC-RARBG.mp4" "Spectre.2015.1080p.BluRay.H264.AAC-RARBG.ass" "SourceTreeSetup_1.7.0.32509.exe" "SourceTree_2.1.dmg" "sourcetree.license" "solarized.zip" "solarized/" "sogou_mac_33e.dmg" "ShuZhang" "ShadowsocksX-2.6.3.dmg" "ShadowsocksX-2.6.3-2.dmg" "service/" "roomtype.csv" "roomtype(1).csv" "robomongo-0.9.0-rc4-darwin-x86_64-8c830b6.dmg.td.cfg" "robomongo-0.9.0-rc4-darwin-x86_64-8c830b6.dmg.td" "robomongo-0.9.0-rc4-darwin-x86_64-8c830b6.dmg" "relation.docx" "qrcode.33228400.png" "QQ_V4.0.6.dmg" "QQ20151228-3@2x.png" "python工程师-单赟吉-简历.pdf" "pycharm-professional-5.0.3-jdk-bundled.dmg" "pub.key" "png图-01.png" "pinard-Pymacs-v0.25-0-g5989046.zip" "pinard-Pymacs-5989046/" "out1.csv" "objcguide.xml" "NeteaseMusic_1.4.2_444_web.dmg" "NeteaseMusic_1.4.0_418_web.dmg" "MongoHub.zip" "MongoHub.app/" "MongoHub 2.app/" "MongoDBCompass-1.0.1-darwin-x64_0.dmg" "MongoDBCompass-1.0.1-darwin-x64.dmg" "mongobooster_1.2.1.dmg" "MD_SDK_SHRJ_V1.0.8_20160128.zip" "MD_SDK_SHRJ_V1.0.8_20160128/" "LvTao" "Like.Sunday.Like.Rain.2014.1080p-Phr0stY/" "Like Sunday Like Rain (2014) 1080p [Phr0stY].mkv" "Like Sunday Like Rain (2014) 1080p [Phr0stY].ass" "JPEG 图.jpg" "iTunesSetup.exe" "iTerm2-2_9_20160206.zip" "iTerm2-2_1_4.zip" "iTerm.app/" "interface_directions.rst" "Inkscape-0.91-1-x11-10.7-x86_64.dmg" "info.db" "hash.py" "googlechrome.dmg" "GitXStable.app.zip" "GitUp.zip" "GitUp.app/" "GitUp 2.app/" "Flask_Web_Development_201404.pdf" "finaltable.csv" "finaltable(1).csv" "final.csv" "final copy.csv" "estatetest_backup_2016_01_02_000001_9944362.zip" "estate.csv" "estate(1).csv" "Emacs-24.5-1-universal.dmg" "dump.rdb" "dataset.json" "custom.csv" "Coding Style Guide.pages" "cloud_live_design.pdf" "city.csv" "ChenGuang" "CGB_Online_Banking_Security_Controls_for_Mac.dmg" "CGB_Online_Banking_Security_Controls_for_Mac (1).dmg" "Brackets.1.5.Extract.dmg" "bootstrap.sh" "Â½µt¿¥WEB¼òÀú/" "addOwner.py" "abc.py~" "abc.py" "[德克萨斯的巴黎].Paris.Texas.1984.BluRay.720p.x264.AC3-CMCT.mkv" "673779.jpg" "673778.jpg" "673772.jpg" "51job_郑子明_Android开发工程师(338301314).mht" "51job_石大平(320978849).doc" "3_Week_FEB_Tech_Plan_20150219.pdf" "2c80270c543a9f35b695d2cdbf027de2.zip" "2.csv" "1月考勤表.pdf" "1月考勤表 (1).pdf" ".localized" ".DS_Store" "-pspic_1419400308995290671.jpg" "#test.test#" "#test.py#" "#b.py#" "#a.py#" "##test.py##" "###test.py###" "../" "./")
+
+ ("/Users/pb/" (22233 22217 0 0) "Thomas.pub" "testtest/" "test/" "spf13-vim.sh" "PycharmProjects/" "Public/" "Pictures/" "Music/" "Movies/" "mongodb/" "Library/" "Downloads/" "Documents/" "Desktop/" "CODEs/" "Code_Backup_20150122.tar.gz" "BLOGs/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-ThoasSUN’s MacBook Pro-5.2" ".zcompdump-ThoasSUN’s MacBook Pro-5.0.8" ".zcompdump-ThoasSUN’s MacBook Pro-5.0.5" ".vimviews/" ".vimundo/" ".vimswap/" ".vimrc.local" ".vimrc.bundles.local" ".vimrc.bundles" ".vimrc.before" ".vimrc" ".viminfo" ".vimbackup/" ".vim.20160128_1453951507/" ".vim/" ".Trash/" ".subversion/" ".ssh/" ".spf13-vim-3/" ".ShadowsocksX/" ".rediscli_history" ".python_history" ".pylint.d/" ".PyCharm50/" ".oracle_jre_usage/" ".oh-my-zsh/" ".npmrc" ".npm/" ".mongorc.js" ".matplotlib/" ".lesshst" ".ipython/" ".htoprc" ".hgignore_global" ".gitignore_global" ".gitconfig" ".gemrc" ".gem/" ".emacs.d.pre-prelude.tar" ".emacs.d/" ".DS_Store" ".dbshell" ".cups/" ".config/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".bash_history" "../" "./")
+
+ ("/Users/" (22140 60535 0 0) "Shared/" "pb/" "Guest/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
