@@ -16,18 +16,8 @@
 (require 'ido)
 (ido-mode t)
 ;; initial window
-(setq initial-frame-alist
-      '(
-        (width . 177) ; character
-        (height . 50
-			    ) ; lines
-        ))
-;; default/sebsequent window
-(setq default-frame-alist
-      '(
-       (width . 100) ; character
-        (height . 100) ; lines
-        ))
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
 
 (custom-set-faces
