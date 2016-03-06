@@ -1,10 +1,3 @@
-(push "/Users/pb/CODEs/webtest/flask_python2/bin" exec-path)
-(setenv "PATH"
-        (concat
-         "/Users/pb/CODEs/webtest/flask_python2/bin" ":"
-         (getenv "PATH")
-         ))
-
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -27,6 +20,12 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 140 :family "Menlo")))))
 
+(add-to-list 'load-path "~/.emacs.d/elpa/virtualenvwrapper-20151127.621")
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+(venv-initialize-eshell) ;; if you want eshell support
+(setq venv-location "~/.virtualenvs")
+
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.3.1")
 (require 'auto-complete)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20160229.1706/dict")
@@ -45,24 +44,8 @@
 (require 'python-mode)
 
 ; use IPython
-(setq-default py-shell-name "/Users/pb/CODEs/pelican/pelican_ENV/bin/ipython")
+(setq-default py-shell-name "/usr/local/bin/ipython")
 (setq-default py-which-bufname "IPython")
-; use the wx backend, for both mayavi and matplotlib
-;; (setq py-python-command-args
-;;   '("--gui=osx"  "--pylab=osx"))
-;(setq py-force-py-shell-name-p t)
-; switch to the interpreter after executing code
-;;(setq py-shell-switch-buffers-on-execute-p t)
-;;(setq py-switch-buffers-on-execute-p t)
-; don't split windows
-;;(setq py-split-windows-on-execute-p nil)
-; try to automagically figure out indentation
-;(setq py-smart-indentation t)
-
-
-
-
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

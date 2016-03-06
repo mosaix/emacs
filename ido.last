@@ -2,12 +2,16 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/thomassun/CODEs/" . "cvTest/")
+ ("/Users/thomassun/" . "CODEs/")
  ("/Users/" . "pb/")
  ("/Users/pb/" . "Downloads/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/thomassun/.emacs.d/"
+ "/Users/thomassun/CODEs/cvTest/"
  "/Users/PolarBear/.emacs.d/"
  "/Users/pb/.emacs.d/"
  "/Users/pb/Downloads/"
@@ -16,6 +20,7 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "cvtest.py"
  ".emac"
  "abc.py"
  "b.py"
@@ -24,11 +29,22 @@
  "##test.py##"
  "#test.py#"
  "test.py"
- "test.test"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/thomassun/.emacs.d/elpa/" (22236 10334 0 0) "virtualenvwrapper-20151127.621/" "suscolors-theme-20160217.1034/" "solarized-theme-20160106.15/" "seoul256-theme-readme.txt" "seoul256-theme-20150714.1535/" "s-20160115.58/" "python-mode-20160302.251/" "Pymacs/" "popup-20151222.1339/" "pinard-Pymacs-5989046/" "fill-column-indicator-20151030.1233/" "dash-20160223.1028/" "color-theme-20080305.34/" "auto-complete-20160229.1706/" "archives/" "../" "./")
+
+ ("/Users/thomassun/.emacs.d/elpa/virtualenvwrapper-20151127.621/" (22236 10334 0 0) "virtualenvwrapper.elc" "virtualenvwrapper.el" "virtualenvwrapper-pkg.elc" "virtualenvwrapper-pkg.el" "virtualenvwrapper-autoloads.el~" "virtualenvwrapper-autoloads.el" "../" "./")
+
+ ("/Users/thomassun/" (22236 10448 0 0) "Tools/" "spf13-vim.sh" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "Documents/" "Desktop/" "CODEs/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-Thomas’s MacBook-5.1.1" ".zcompdump-Thomas’s MacBook-5.0.8" ".zcompdump-Thomas’s MacBook-5.0.5" ".virtualenvs/" ".vimviews/" ".vimundo/" ".vimswap/" ".vimrc.local" ".vimrc.bundles" ".vimrc.before" ".vimrc" ".viminfo" ".vimbackup/" ".vim.20160131_1454245429/" ".vim/" ".Trash/" ".subversion/" ".ssh/" ".spf13-vim-3/" ".ShadowsocksX/" ".oh-my-zsh/" ".htoprc" ".emacs.d/" ".DS_Store" ".CFUserTextEncoding" ".cache/" ".bash_history" "../" "./")
+
+ ("/Users/thomassun/.emacs.d/" (22236 10479 0 0) "pb-theme.el" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".git/" "#.emacs#" "#.emac#" "../" "./")
+
+ ("/Users/thomassun/CODEs/" (22236 9639 0 0) "Python_Code_IRIGI/" "cvTest/" "../" "./")
+
+ ("/Users/thomassun/CODEs/cvTest/" (22236 9749 0 0) "oscar.jpg" "opencv_contrib/" "opencv/" "cvtest.py~" "cvtest.py" "../" "./")
+
  ("/Users/PolarBear/.emacs.d/" (22234 51989 0 0) "pb-theme.el" "otherpeople.config.emacs" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".git/" "#.emacs#" "#.emac#" "../" "./")
 
  ("/Users/PolarBear/" (22234 50972 0 0) "Virtualenvs/" "VirtualBox VMs/" "PycharmProjects/" "Public/" "Projects/" "Pictures/" "pelican-themes/" "Music/" "Movies/" "Library/" "Downloads/" "Documents/" "Desktop/" "Codes/" "bak/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-Thomas’s MacBook Pro-5.0.8" ".zcompdump-Thomas’s MacBook Pro-5.0.5" ".zcompdump-Thomas’s MacBook Pro-5.0.2" ".vimrc" ".viminfo" ".vim" ".Trash/" ".subversion/" ".ssh/" ".python27_compiled/" ".PyCharm50/" ".profile" ".pip/" ".oh-my-zsh/" ".mysql_history" ".matplotlib/" ".lesshst" ".ipython/" ".htoprc" ".gitk" ".gitconfig" ".emacs.d/" ".DS_Store" ".CFUserTextEncoding" ".canopy/" ".cache/" ".boot2docker/" ".bash_history" ".aspell.en.pws" ".aspell.en.prepl" "-=DL=-/" "../" "./")
