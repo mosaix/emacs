@@ -1,3 +1,4 @@
+(define-coding-system-alias 'UTF-8 'utf-8)
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -33,6 +34,21 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
+(require 'package)
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
+(package-initialize)
+(elpy-enable)
+
+(package-install 'flycheck)
+(global-flycheck-mode)
+
+(require 'py-autopep8)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
+(setq py-autopep8-options '("--max-line-length=100"))
+
 (add-to-list 'load-path "~/.emacs.d/elpa/fill-column-indicator-20151030.1233")
 (require 'fill-column-indicator)
 (define-globalized-minor-mode
@@ -56,7 +72,8 @@
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-
+(require 'linum)  
+(global-linum-mode t)  
 (menu-bar-mode -1) ;; 不显示菜单
 (tool-bar-mode -1) ;; 不显示工具栏
 (scroll-bar-mode -1) ;; 不显示滚动条
