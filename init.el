@@ -11,7 +11,87 @@
 (ido-mode t)
 ;; initial window
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#303030" "#ff4b4b" "#d7ff5f" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"])
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#839496")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
+ '(custom-enabled-themes (quote (idea-darkula)))
+ '(custom-safe-themes
+   (quote
+	("4ab86c7682db09485a6e046ee0a6c45b5462f514c89844f4ed8b329aa1708067" "23562d67c3657a80dd1afc21e1e80652db0ff819e477649d23a38c1502d1245f" "74278d14b7d5cf691c4d846a4bbf6e62d32104986f104c1e61f718f9669ec04b" "f81933744f47a010213537575f84085af3937b27748b4f5c9249c5e100856fc5" "613a7c50dbea57860eae686d580f83867582ffdadd63f0f3ebe6a85455ab7706" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(fci-rule-color "#073642")
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
+ '(highlight-symbol-colors
+   (--map
+	(solarized-color-blend it "#002b36" 0.25)
+	(quote
+	 ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#93a1a1")
+ '(highlight-tail-colors
+   (quote
+	(("#073642" . 0)
+	 ("#546E00" . 20)
+	 ("#00736F" . 30)
+	 ("#00629D" . 50)
+	 ("#7B6000" . 60)
+	 ("#8B2C02" . 70)
+	 ("#93115C" . 85)
+	 ("#073642" . 100))))
+ '(hl-bg-colors
+   (quote
+	("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
+ '(hl-fg-colors
+   (quote
+	("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(magit-diff-use-overlays nil)
+ '(nrepl-message-colors
+   (quote
+	("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(pos-tip-background-color "#073642")
+ '(pos-tip-foreground-color "#93a1a1")
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(term-default-bg-color "#002b36")
+ '(term-default-fg-color "#839496")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+	((20 . "#dc322f")
+	 (40 . "#c85d17")
+	 (60 . "#be730b")
+	 (80 . "#b58900")
+	 (100 . "#a58e00")
+	 (120 . "#9d9100")
+	 (140 . "#959300")
+	 (160 . "#8d9600")
+	 (180 . "#859900")
+	 (200 . "#669b32")
+	 (220 . "#579d4c")
+	 (240 . "#489e65")
+	 (260 . "#399f7e")
+	 (280 . "#2aa198")
+	 (300 . "#2898af")
+	 (320 . "#2793ba")
+	 (340 . "#268fc6")
+	 (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (quote
+	(unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
+ '(xterm-color-names
+   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
+ '(xterm-color-names-bright
+   ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/moe-theme-20160216.1821/")
+    (add-to-list 'load-path "~/.emacs.d/moe-theme-20160216.1821/")
+    (require 'moe-theme)
 
 
 (custom-set-faces
@@ -63,15 +143,7 @@
 (setq-default py-shell-name "/usr/local/bin/ipython")
 (setq-default py-which-bufname "IPython")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (solarized-dark)))
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+
 (require 'linum)  
 (global-linum-mode t)  
 (menu-bar-mode -1) ;; 不显示菜单
