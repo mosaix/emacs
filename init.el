@@ -93,4 +93,24 @@
 (auto-image-file-mode t);打开图片显示功能
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(mouse-avoidance-mode 'animate);光标靠近鼠标指针时，让鼠标指针自动让开
+(mouse-avoidance-mode 'animate);光标靠近鼠标指针时，(setq org-todo-keywords
+'((sequence "TODO(t)" "|" "DONE(d)")
+(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+(sequence "|" "CANCELED(c)"))
+
+
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+(setq org-todo-keywords
+	  '((sequence "TODO(t)" "STARTED" "WAITING(w@/!" "|" "DONE(d!)" "CANCELLED(c@)")))
+(setq org-clock-into-drawer t)
+
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
+
+
+(add-hook 'python-mode-hook 'my-jedi-server-setup)
+
