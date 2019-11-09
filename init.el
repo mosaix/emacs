@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
+    (powerline ace-jump-mode switch-window undo-tree autopair nlinum elscreen zoom multiple-cursors pangu-spacing goto-line-preview dimmer color-identifiers-mode yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -30,7 +30,17 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-;; BEACON
+(setq frame-title-format "THOMAS EMACS")
+
+(set-default 'cursor-type 'hbar)
+(column-number-mode)
+(show-paren-mode)
+(global-hl-line-mode)
+(winner-mode t)
+(windmove-default-keybindings)
+(autopair-global-mode)
+
+;; Beacon
 
 (beacon-mode 1)
 
@@ -38,9 +48,9 @@
     (set-fontset-font "fontset-default" charset
                       (font-spec :family "STKaiti")))
 
-;(set-default-font "InputMono 18")
+(set-default-font "InputMono 18")
 
-(set-default-font "FuraCode Nerd Font 18")
+;;(set-default-font "FuraCode Nerd Font 18")
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
@@ -50,6 +60,7 @@
 (setq linum-format "%1d \u2502 ")
 (global-linum-mode t)
 (linum-relative-global-mode t)
+(nlinum-mode)
 
 ;; HELM
 
@@ -61,7 +72,6 @@
 
 ;; IDO
 
-(require 'ido)
 (ido-mode t)
 
 ;; SWIPER
@@ -111,6 +121,56 @@
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets/own/"                 ;; personal snippets
         ;;"~/.emacs.d/snippets/collection/"           ;; foo-mode and bar-mode snippet collection
+	"c:/Users/Thomas Sun/AppData/Roaming/.emacs.d/elpa/yasnippet-snippets-20191108.917/snippets/"
         ))
 
+;; GLOBAL COLOR IDENTIFIERS
+(color-identifiers-mode t)
+(add-hook 'after-init-hook 'global-color-identifiers-mode)
+
+;; DIMMER
+
+(dimmer-mode)
+
+;; PANGU SPACING
+
+(global-pangu-spacing-mode 1)
+(setq pangu-spacing-real-insert-separtor t)
+
+;; MULTI CURSORS
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; ELSCREEN
+
+(elscreen-start)
+
+;; ZOOM
+
+(global-set-key (kbd "C-x +") 'zoom)
+
+;; GLOBAL SET KEY
+
+(global-set-key (kbd "C-c r") #'eval-buffer)
+
+;; UNDO
+
+(global-undo-tree-mode)
+(global-set-key (kbd "M-/") 'undo-tree-visualize)
+
+;; SWITCH WINDOW
+
+(global-set-key (kbd "C-M-z") 'switch-window)
+
+;; ACE JUMP
+
+(global-set-key (kbd "C-M->") 'ace-jump-mode)
+
+;; POWERLINE
+
+(powerline-center-theme)
+(setq powerline-default-separator 'wave)
 
