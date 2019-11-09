@@ -1,5 +1,8 @@
 ;; Thomas EMACS 2019 CONFIG
 
+;; CODING-SYSTEM
+(prefer-coding-system 'utf-8)
+
 ;; PARADOX PACKAGES MANAGER
 
 (require 'package)
@@ -13,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
+    (yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -101,5 +104,13 @@
 
 ;; YAsnippet
 
+(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets/own/"                 ;; personal snippets
+        ;;"~/.emacs.d/snippets/collection/"           ;; foo-mode and bar-mode snippet collection
+        ))
 
 
