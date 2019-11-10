@@ -11,9 +11,29 @@
 
 ;; FOR UNINSTALL PACKAGES
 
-(unless package-archive-contents
-  (package-refresh-contents))
-(package-install-selected-packages)
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     ;; (package-installed-p 'evil)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+;; make sure to have downloaded archive description.
+;; Or use package-archive-contents as suggested by Nicolas Dudebout
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+(ensure-package-installed 'powerline 'ace-jump-mode 'switch-window 'undo-tree 'autopair 'nlinum 'elscreen 'zoom 'multiple-cursors 'pangu-spacing 'goto-line-preview 'dimmer 'color-identifiers-mode 'yasnippet-snippets 'yasnippet 'company 'doom-themes 'doom-modeline 'beacon 'swiper 'ivy 'counsel 'linum-relative 'paradox 'helm) ;  --> (nil nil) if iedit and magit are already installed
+
+;; activate installed packages
+(package-initialize)
 
 ;; PARADOX
 
