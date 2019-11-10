@@ -9,6 +9,14 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+;; FOR UNINSTALL PACKAGES
+
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install-selected-packages)
+
+;; PARADOX
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -121,7 +129,7 @@
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets/own/"                 ;; personal snippets
         ;;"~/.emacs.d/snippets/collection/"           ;; foo-mode and bar-mode snippet collection
-	"c:/Users/Thomas Sun/AppData/Roaming/.emacs.d/elpa/yasnippet-snippets-20191108.917/snippets/"
+	;;"c:/Users/Thomas Sun/AppData/Roaming/.emacs.d/elpa/yasnippet-snippets-20191108.917/snippets/"
         ))
 
 ;; GLOBAL COLOR IDENTIFIERS
@@ -174,3 +182,6 @@
 (powerline-center-theme)
 (setq powerline-default-separator 'wave)
 
+;; OPEN INIT FILE
+
+(global-set-key (kbd "<f2>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
