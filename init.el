@@ -1,5 +1,9 @@
 ;; Thomas EMACS 2019 CONFIG
 
+;; MAX WINDOW
+
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; CODING-SYSTEM
 (prefer-coding-system 'utf-8)
 
@@ -31,7 +35,7 @@ Return a list of installed packages or nil for every skipped package."
     (package-refresh-contents))
 
 (ensure-package-installed 'powerline 'ace-jump-mode 'switch-window 'undo-tree 'autopair 'nlinum 'elscreen 'zoom 'multiple-cursors 'pangu-spacing 'goto-line-preview 'dimmer 'color-identifiers-mode 'yasnippet-snippets 'yasnippet 'company 'doom-themes 'doom-modeline 'beacon 'swiper 'ivy 'counsel 'linum-relative 'paradox 'helm) ;  --> (nil nil) if iedit and magit are already installed
-
+;; doom-modeline
 ;; activate installed packages
 (package-initialize)
 
@@ -55,8 +59,8 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; INTERFACE MISC
 
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
+;;(when (memq window-system '(mac ns x))
+;;  (exec-path-from-shell-initialize))
 
 (setq frame-title-format "THOMAS EMACS")
 
@@ -74,7 +78,7 @@ Return a list of installed packages or nil for every skipped package."
 
 (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font "fontset-default" charset
-                      (font-spec :family "STKaiti")))
+                      (font-spec :family "STKaiti" :size 20)))
 
 (set-default-font "InputMono 18")
 
@@ -102,16 +106,13 @@ Return a list of installed packages or nil for every skipped package."
 
 (ido-mode t)
 
-;; SWIPER
+;; Swiper
 
 (global-set-key (kbd "C-s") #'swiper-isearch)
 (global-set-key (kbd "C-c s") #'swiper-all)
 
 
-;;DOOM-MODELINE
-
-(require 'doom-modeline)
-(doom-modeline-mode 1)
+;;DOOM-MODELINE(doom-modeline-mode 1)
 (setq doom-modeline-height 18)
 (setq doom-modeline-icon (display-graphic-p))
 (setq doom-modeline-major-mode-color-icon t)
@@ -127,9 +128,9 @@ Return a list of installed packages or nil for every skipped package."
 (setq doom-modeline-env-enable-ruby t)
 (setq doom-modeline-env-enable-perl t)
 (setq doom-modeline-env-enable-go t)
-;;(setq doom-modeline-before-update-env-hook nil)
-;;(setq doom-modeline-after-update-env-hook nil)
-;;(setq doom-modeline-env-python-executable "python")
+(setq doom-modeline-before-update-env-hook nil)
+(setq doom-modeline-after-update-env-hook nil)
+(setq doom-modeline-env-python-executable "python")
 
 ;; THEME
 
