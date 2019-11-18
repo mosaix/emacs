@@ -1,5 +1,9 @@
 ;; Thomas EMACS 2019 CONFIG
 
+;; DISABLE BAKCKUP FILEs
+
+(setq make-backup-files nil)
+
 ;; MAX WINDOW
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -46,9 +50,12 @@ Return a list of installed packages or nil for every skipped package."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-source-correlate-method (quote synctex))
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
  '(package-selected-packages
    (quote
-    (powerline ace-jump-mode switch-window undo-tree autopair nlinum elscreen zoom multiple-cursors pangu-spacing goto-line-preview dimmer color-identifiers-mode yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
+    (latex-preview-pane auctex-latexmk auctex powerline ace-jump-mode switch-window undo-tree autopair nlinum elscreen zoom multiple-cursors pangu-spacing goto-line-preview dimmer color-identifiers-mode yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -206,3 +213,45 @@ Return a list of installed packages or nil for every skipped package."
 ;; OPEN INIT FILE
 
 (global-set-key (kbd "<f2>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; setting up latex mode
+;; Forward/inverse search with evince using D-bus.
+;; Installation:
+;; M-x package-install RET auctex RET
+;; Tells emacs where to find LaTeX.
+(let ((my-path (expand-file-name "/usr/local/bin:/usr/local/texlive/2019/bin/x86_64-darwin")))
+(setenv "PATH" (concat my-path ":" (getenv "PATH")))
+(add-to-list 'exec-path my-path)) 
+
+;; AucTeX settings
+(setq TeX-PDF-mode t)
+
+(add-hook 'LaTeX-mode-hook
+(lambda ()
+  (push
+   '("xelatex" "xelatex -pdf %s" TeX-run-TeX nil t
+     :help "Run xelatex on file")
+    TeX-command-list)))
+(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "xelatex")))
+
+;(add-hook 'LaTeX-mode-hook
+;(lambda ()
+;  (push
+;   '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
+;     :help "Run latexmk on file")
+;    TeX-command-list)))
+;(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
+;
+
+
+(setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
+(setq TeX-view-program-list
+      '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; LATEX PREVIEW PANEL
+(latex-preview-pane-enable)
+(setq pdf-latex-command "xelatex")
