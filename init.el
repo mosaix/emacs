@@ -1,6 +1,8 @@
-;; Thomas EMACS 2019 CONFIG
+;; Thomas EMACS 2025 CONFIG
 
 ;; DISABLE BAKCKUP FILEs
+
+(setq inhibit-startup-screen t)
 
 (setq make-backup-files nil)
 
@@ -13,9 +15,11 @@
 
 ;; PARADOX PACKAGES MANAGER
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+
+(setq package-archives '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                         ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;;(package-initialize) ;; You might already have this line
 
 ;; FOR UNINSTALL PACKAGES
 
@@ -38,46 +42,28 @@ Return a list of installed packages or nil for every skipped package."
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
-(ensure-package-installed 'powerline 'ace-jump-mode 'switch-window 'undo-tree 'autopair 'nlinum 'elscreen 'zoom 'multiple-cursors 'pangu-spacing 'goto-line-preview 'dimmer 'color-identifiers-mode 'yasnippet-snippets 'yasnippet 'company 'doom-themes 'doom-modeline 'beacon 'swiper 'ivy 'counsel 'linum-relative 'paradox 'helm) ;  --> (nil nil) if iedit and magit are already installed
-;; doom-modeline
+;; beacon lsp-mode timu-spacegrey corfu ivy
+
+(ensure-package-installed 'beacon 'lsp-mode 'timu-spacegrey-theme 'corfu 'ivy )
+
+;;(ensure-package-installed 'powerline 'ace-jump-mode 'switch-window 'undo-tree 'nlinum 'elscreen 'zoom 'multiple-cursors 'pangu-spacing 'goto-line-preview 'dimmer 'color-identifiers-mode 'yasnippet-snippets 'yasnippet 'company 'doom-themes 'doom-modeline 'beacon 'swiper 'ivy 'counsel 'linum-relative 'paradox 'helm) ;  --> (nil nil) if iedit and magit are already installed
+; doom-modeline
 ;; activate installed packages
 (package-initialize)
 
 ;; PARADOX
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(TeX-source-correlate-method (quote synctex))
- '(TeX-source-correlate-mode t)
- '(TeX-source-correlate-start-server t)
- '(package-selected-packages
-   (quote
-    (latex-preview-pane auctex-latexmk auctex powerline ace-jump-mode switch-window undo-tree autopair nlinum elscreen zoom multiple-cursors pangu-spacing goto-line-preview dimmer color-identifiers-mode yasnippet-snippets yasnippet company doom-themes doom-modeline beacon swiper ivy counsel linum-relative paradox helm)))
- '(paradox-github-token t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
-;; INTERFACE MISC
-
-;;(when (memq window-system '(mac ns x))
-;;  (exec-path-from-shell-initialize))
-
-(setq frame-title-format "THOMAS EMACS")
+;;(setq frame-title-format "THOMAS EMACS")
 
 (set-default 'cursor-type 'hbar)
 (column-number-mode)
+
 (show-paren-mode)
 (global-hl-line-mode)
 (winner-mode t)
 (windmove-default-keybindings)
-(autopair-global-mode)
+;;(autopair-global-mode)
 
 ;; Beacon
 
@@ -87,8 +73,8 @@ Return a list of installed packages or nil for every skipped package."
     (set-fontset-font "fontset-default" charset
                       (font-spec :family "STKaiti" :size 20)))
 
-(set-default-font "InputMono 18")
-
+;;(set-default-font "JetBrainsMono Nerd Font Mono 18")
+(set-frame-font "JetBrains Mono 18" nil t)
 ;;(set-default-font "FuraCode Nerd Font 18")
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
@@ -96,162 +82,124 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; LINE NUMBER
 
-(setq linum-format "%1d \u2502 ")
-(global-linum-mode t)
-(linum-relative-global-mode t)
-(nlinum-mode)
-
-;; HELM
-
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
+;;(setq linum-format "%2d \u2502 ")
+;;(setq global-nlinum-mode t)
+;;(setq column-number-mode t)
+;;(setq display-line-numbers-mode t)
+;;(setq linum-relative-global-mode t)
+;;(setq linum-relative-mode t)
+(setq-default display-line-numbers 'relative
+      display-line-numbers-current-absolute t)
 
 ;; IDO
 
-(ido-mode t)
+;;(ido-mode t)
 
 ;; Swiper
 
-(global-set-key (kbd "C-s") #'swiper-isearch)
-(global-set-key (kbd "C-c s") #'swiper-all)
+;(global-set-key (kbd "C-s") #'swiper-isearch)
+;(global-set-key (kbd "C-c s") #'swiper-all)
 
 
-;;DOOM-MODELINE(doom-modeline-mode 1)
-(setq doom-modeline-height 18)
-(setq doom-modeline-icon (display-graphic-p))
-(setq doom-modeline-major-mode-color-icon t)
-(setq doom-modeline-buffer-state-icon t)
-(setq doom-modeline-buffer-modification-icon t)
-(setq doom-modeline-unicode-fallback t)
-(setq doom-modeline-buffer-encoding t)
-(setq doom-modeline-indent-info nil)
-(setq doom-modeline-persp-name t)
-(setq doom-modeline-lsp t)
-(setq doom-modeline-env-version t)
-(setq doom-modeline-env-enable-python t)
-(setq doom-modeline-env-enable-ruby t)
-(setq doom-modeline-env-enable-perl t)
-(setq doom-modeline-env-enable-go t)
-(setq doom-modeline-before-update-env-hook nil)
-(setq doom-modeline-after-update-env-hook nil)
-(setq doom-modeline-env-python-executable "python")
 
-;; THEME
+(load-theme 'timu-spacegrey t)
 
-(load-theme 'doom-spacegrey t)
-;;(load-theme 'doom-solarized-light t)
+;; IVY
 
-;;AUTO-COMPLETE
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
-(add-hook 'after-init-hook 'global-company-mode)
+;; LSP SERVER
 
-;; YAsnippet
+;; if you want to change prefix for lsp-mode keybindings.
+(setq lsp-keymap-prefix "s-l")
 
-(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+(require 'lsp-mode)
+(add-hook 'python-mode-hook #'lsp)
 
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets/own/"                 ;; personal snippets
-        ;;"~/.emacs.d/snippets/collection/"           ;; foo-mode and bar-mode snippet collection
-	;;"c:/Users/Thomas Sun/AppData/Roaming/.emacs.d/elpa/yasnippet-snippets-20191108.917/snippets/"
-        ))
+;; AUTOCOMPLETION
+(use-package corfu
+  ;; Optional customizations
+  ;; :custom
+  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
 
-;; GLOBAL COLOR IDENTIFIERS
-(color-identifiers-mode t)
-(add-hook 'after-init-hook 'global-color-identifiers-mode)
+  ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
+  ;; :hook ((prog-mode . corfu-mode)
+  ;;        (shell-mode . corfu-mode)
+  ;;        (eshell-mode . corfu-mode))
 
-;; DIMMER
+  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
+  ;; be used globally (M-/).  See also the customization variable
+  ;; `global-corfu-modes' to exclude certain modes.
+  :init
+  (global-corfu-mode))
 
-(dimmer-mode)
+;; A few more useful configurations...
+(use-package emacs
+  :custom
+  ;; TAB cycle if there are only few candidates
+  ;; (completion-cycle-threshold 3)
 
-;; PANGU SPACING
+  ;; Enable indentation+completion using the TAB key.
+  ;; `completion-at-point' is often bound to M-TAB.
+  (tab-always-indent 'complete)
 
-(global-pangu-spacing-mode 1)
-(setq pangu-spacing-real-insert-separtor t)
+  ;; Emacs 30 and newer: Disable Ispell completion function.
+  ;; Try `cape-dict' as an alternative.
+  (text-mode-ispell-word-completion nil)
 
-;; MULTI CURSORS
+  ;; Hide commands in M-x which do not apply to the current mode.  Corfu
+  ;; commands are hidden, since they are not used via M-x. This setting is
+  ;; useful beyond Corfu.
+  (read-extended-command-predicate #'command-completion-default-include-p))
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(setq corfu-auto t
+      corfu-quit-no-match 'separator) ;; or t
 
-;; ELSCREEN
+(setq corfu-auto        t
+      corfu-auto-delay  1  ;; TOO SMALL - NOT RECOMMENDED!
+      corfu-auto-prefix 1) ;; TOO SMALL - NOT RECOMMENDED!
 
-(elscreen-start)
+(add-hook 'corfu-mode-hook
+          (lambda ()
+            ;; Settings only for Corfu
+            (setq-local completion-styles '(basic)
+                        completion-category-overrides nil
+                        completion-category-defaults nil)))
 
-;; ZOOM
+(setq global-corfu-minibuffer
+      (lambda ()
+        (not (or (bound-and-true-p mct--active)
+                 (bound-and-true-p vertico--input)
+                 (eq (current-local-map) read-passwd-map)))))
 
-(global-set-key (kbd "C-x +") 'zoom)
-
-;; GLOBAL SET KEY
-
-(global-set-key (kbd "C-c r") #'eval-buffer)
-
-;; UNDO
-
-(global-undo-tree-mode)
-(global-set-key (kbd "M-/") 'undo-tree-visualize)
-
-;; SWITCH WINDOW
-
-(global-set-key (kbd "C-M-z") 'switch-window)
-
-;; ACE JUMP
-
-(global-set-key (kbd "C-M->") 'ace-jump-mode)
-
-;; POWERLINE
-
-(powerline-center-theme)
-(setq powerline-default-separator 'wave)
-
-;; OPEN INIT FILE
-
-(global-set-key (kbd "<f2>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; setting up latex mode
-;; Forward/inverse search with evince using D-bus.
-;; Installation:
-;; M-x package-install RET auctex RET
-;; Tells emacs where to find LaTeX.
-(let ((my-path (expand-file-name "/usr/local/bin:/usr/local/texlive/2019/bin/x86_64-darwin")))
-(setenv "PATH" (concat my-path ":" (getenv "PATH")))
-(add-to-list 'exec-path my-path)) 
-
-;; AucTeX settings
-(setq TeX-PDF-mode t)
-
-(add-hook 'LaTeX-mode-hook
-(lambda ()
-  (push
-   '("xelatex" "xelatex -pdf %s" TeX-run-TeX nil t
-     :help "Run xelatex on file")
-    TeX-command-list)))
-(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "xelatex")))
-
-;(add-hook 'LaTeX-mode-hook
-;(lambda ()
-;  (push
-;   '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
-;     :help "Run latexmk on file")
-;    TeX-command-list)))
-;(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
-;
+(add-hook 'eshell-mode-hook (lambda ()
+                              (setq-local corfu-auto nil)
+                              (corfu-mode)))
 
 
-(setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
-(setq TeX-view-program-list
-      '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; LATEX PREVIEW PANEL
-(latex-preview-pane-enable)
-(setq pdf-latex-command "xelatex")
